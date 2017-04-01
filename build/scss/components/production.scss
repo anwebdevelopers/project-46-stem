@@ -1,0 +1,276 @@
+.production {
+    position: relative;
+    padding: 0 0 7rem 0;
+    background-color: #f4f5f6;
+    overflow: hidden;
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: -500%;
+        top: 0;
+        right: 50%;
+        bottom: 0;
+        //margin-right: 10rem;
+        background-color: $main-color;
+        transform: skewX(-45deg);
+        //transform: rotate(45deg);
+        transform-origin: right top;
+    }
+    // &:after {
+    //     content: '';
+    //     position: absolute;
+    //     z-index: 0;
+    //     right: -500%;
+    //     top: 0;
+    //     left: 50%;
+    //     bottom: 0;
+    //     //height: 120%;
+    //     margin-left: -50rem;
+    //     background-color: #f4f5f6;
+    //     transform: skewX(45deg);
+    //     //transform: rotate(-45deg);
+    //     //transform-origin: left top;
+    // }
+}
+.production__container {
+    position: relative;
+    z-index: 1;
+}
+.production__title {
+    color: #fff;
+    text-shadow: 1px 1px 1px $main-color;
+}
+.production__tabs {
+    margin: 4rem 0 0 0;
+    display: flex;
+}
+.production__tabs-buttons {
+    flex: 0 1 auto;
+    width: 38%;
+    button {
+        @include btn;
+        position: relative;
+        display: block;
+        margin: 1.5rem 0 0 0;
+        padding: 1rem 3rem;
+    	font-size: 2.4rem;
+        line-height: 1;
+        font-weight: 400;
+        font-family: 'Circe', sans-serif;
+        color: #b8940a;
+    	background-color: rgba(255, 255, 255, 0);
+        box-shadow: inset 0 0 0 .2rem #7f6500;
+    	border-radius: 3rem;
+    	text-align: center;
+    	transition: all .5s ease;
+
+        &:hover, &:active {
+            color: #fff;
+            background-color: $main-color;
+    		box-shadow: inset 0 0 0 .2rem $accent-color,
+    					inset 0 0 5rem .6rem $accent-color;
+    		&:before, &:after {
+    			content: '';
+    			position: absolute;
+    			z-index: 0;
+    			top: 0;
+    			left: 0;
+    			width: 100%;
+    			height: 100%;
+    			box-shadow: inset 0 0 0 .2rem $accent-color;
+    			border-radius: 6rem;
+    			animation-name: button;
+    			animation-duration: 2s;
+    			animation-iteration-count: infinite;
+    		}
+    		&:after {
+    			animation-delay: 1.1s;
+    		}
+        }
+        &.active {
+            color: #fff;
+            background-color: $accent-color;
+            box-shadow: inset 0 0 0 .2rem $accent-color;
+            &:before, &:after {
+                animation: none;
+            }
+        }
+    }
+}
+.production__tabs-box {
+    flex: 0 1 auto;
+    width: 62%;
+    margin: 0 0 0 2%;
+}
+.production__tabs-item {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.production__tabs-content {
+    flex: 0 1 auto;
+    margin: 0 5% 0 0;
+    width: 51%;
+}
+.production__tabs-title {
+    margin: 0;
+    font-size: 3.5rem;
+    line-height: 1;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.production__tabs-text {
+    margin: 2.5rem 0 0 0;
+    font-size: 2.4rem;
+    line-height: 1.25;
+    font-weight: 400;
+}
+.production__tabs-list {
+    list-style: none;
+    padding: 0;
+    margin: 2.5rem 0 0 0;
+    font-size: 2.4rem;
+    line-height: 1.25;
+    font-weight: 400;
+    color: #6e6e6e;
+    li {
+        margin: .3rem 0 0 0;
+        padding: 0 0 0 1.5rem;
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 1rem;
+            width: .5rem;
+            height: .5rem;
+            border-radius: 50%;
+            background-color: #f16f8e;
+        }
+    }
+}
+.production__tabs-wrapper {
+    margin: 4.5rem 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.production__tabs-button {
+    margin: 0 2rem 0 0;
+}
+.production__tabs-link {
+    margin: 1rem 0;
+    font-size: 1.6rem;
+    line-height: 1;
+    font-weight: 400;
+    a {
+        position: relative;
+        color: #000;
+        text-decoration: none;
+        border-bottom: 2px dotted $accent-color;
+        transition: all 0.5s ease;
+
+        &:active,
+        &:focus,
+        &:hover {
+            color: $accent-color;
+            border-color: $main-color;
+        }
+    }
+}
+.production__tabs-img {
+    flex: 0 1 auto;
+    width: 44%;
+    position: relative;
+    img {
+        position: relative;
+        z-index: 1;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 0;
+        padding-bottom: 80%;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0 0 0 2px #efefef,0 0 30px 0 #efefef;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        border-radius: 50%;
+        box-shadow: 0 0 2px 0 #ccc;
+    }
+}
+
+@media only screen and (max-width : 1400px) {
+
+}
+
+@media only screen and (max-width : 1280px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+    .production__tabs {
+        display: block;
+    }
+    .production__tabs-buttons {
+        width: auto;
+        button {
+            display: inline-block;
+            vertical-align: top;
+            margin: 1rem 1rem 0 0;
+        }
+    }
+    .production__tabs-box {
+        width: auto;
+        margin: 6rem 0 0 0;
+    }
+    .production__tabs-content {
+        //margin: 0 5% 0 0;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .production__tabs-item {
+        display: block;
+    }
+    .production__tabs-img {
+        width: auto;
+        max-width: 290px;
+        margin: 0 auto;
+    }
+    .production__tabs-content {
+        margin: 4rem 0 0 0;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width : 320px) {
+
+}

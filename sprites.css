@@ -1,0 +1,64 @@
+.icon-rocket, .icon-advantages1, .icon-advantages2, .icon-advantages3, .icon-advantages4, .icon-dealer1, .icon-dealer2, .icon-dealer3, .icon-dealer4, .icon-dealer5{
+	background: url(sprites.png) no-repeat;
+}
+
+.icon-rocket{
+	background-position: -37px 0;
+	width: 33px;
+	height: 25px;
+}
+
+.icon-advantages1{
+	background-position: 0 -29px ;
+	width: 63px;
+	height: 62px;
+}
+
+.icon-advantages2{
+	background-position: 0 -96px ;
+	width: 67px;
+	height: 58px;
+}
+
+.icon-advantages3{
+	background-position: 0 -160px ;
+	width: 70px;
+	height: 64px;
+}
+
+.icon-advantages4{
+	background-position: 0 -234px ;
+	width: 50px;
+	height: 64px;
+}
+
+.icon-dealer1{
+	background-position: 0 -306px ;
+	width: 56px;
+	height: 55px;
+}
+
+.icon-dealer2{
+	background-position: 0 -368px ;
+	width: 55px;
+	height: 55px;
+}
+
+.icon-dealer3{
+	background-position: 0 -431px ;
+	width: 47px;
+	height: 57px;
+}
+
+.icon-dealer4{
+	background-position: 0 -495px ;
+	width: 59px;
+	height: 55px;
+}
+
+.icon-dealer5{
+	background-position: 0 -559px ;
+	width: 67px;
+	height: 56px;
+}
+

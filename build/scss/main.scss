@@ -1,0 +1,166 @@
+@import "bourbon";
+@import "components/vars.scss";
+@import "components/normalize.scss";
+@import "components/fonts.scss";
+@import "components/icons.scss";
+
+*:focus::-webkit-input-placeholder {color: transparent}
+*:focus::-moz-placeholder          {color: transparent}
+*:focus:-moz-placeholder           {color: transparent}
+*:focus:-ms-input-placeholder      {color: transparent}
+
+*::-webkit-input-placeholder {
+	color: #000;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: #000;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	color: #000;
+	opacity: 1;
+}
+
+*:-ms-input-placeholder {
+	color: #000;
+	opacity: 1;
+}
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	color: #000;
+}
+body input:required:valid,
+body textarea:required:valid {
+	color: #000;
+}
+*,
+*:before,
+*:after{
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	font-size: 10px;
+}
+body {
+	position: relative;
+	min-width: 320px;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 2.4rem;
+	line-height: 1.25;
+	font-weight: 400;
+	font-family: 'Circe', sans-serif;
+	color: #141414;
+	background-color: #fff;
+}
+.container {
+	max-width: 1280px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.hidden {
+	display: none;
+}
+a {
+	outline: none !important;
+	color: $main-color;
+}
+.button {
+	@include btn;
+	position: relative;
+	padding: 1.5rem 3rem;
+	font-size: 1.6rem;
+    line-height: 1;
+    font-weight: 400;
+	font-family: 'Circe', sans-serif;
+    color: #fff;
+	background-color: $accent-color;
+	box-shadow: inset 0 0 0 4px $accent-color;
+	border-radius: 3rem;
+	text-align: center;
+	transition: all .5s ease;
+	&:hover, &:active, &:focus {
+
+		background-color: $main-color;
+		box-shadow: inset 0 0 0 .4rem $accent-color,
+					inset 0 0 5rem .6rem $accent-color;
+		&:before, &:after {
+			content: '';
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			box-shadow: inset 0 0 0 .4rem $accent-color;
+			border-radius: 6rem;
+			animation-name: button;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+		}
+		&:after {
+			animation-delay: 1.1s;
+		}
+	}
+}
+.button_big {
+	font-size: 2.4rem;
+	padding: 2rem 4rem;
+	border-radius: 4rem;
+}
+@keyframes button {
+	0% {
+		box-shadow: inset 0 0 0 4px $accent-color;
+		transform: scale(1);
+		opacity: .8;
+	}
+	100% {
+		box-shadow: inset 0 0 0 1px $accent-color;
+		transform: scale(1.2, 1.6);
+		opacity: .05;
+	}
+}
+
+.title {
+	margin: 0;
+	font-size: 5rem;
+    line-height: 1;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.undertitle {
+	margin: 3rem 0 0 0;
+	font-size: 2.4rem;
+    line-height: 1.25;
+    font-weight: 400;
+}
+
+//Custom Styles Here
+@import "components/menu.scss";
+@import "components/header.scss";
+@import "components/about.scss";
+@import "components/production.scss";
+@import "components/advantages.scss";
+@import "components/selection.scss";
+
+//@import "build/scss/components/magnific-popup.scss";
+
+//ALWAYS END
+//@import "components/media.scss";
+
+//Load Libs SASS
+//@import "html/libs/animate/animate.sass";
+//@import "html/libs/owl.carousel/dist/assets/owl.carousel.min";
+//@import "html/libs/superfish/dist/css/superfish";
+//@import "html/libs/font-awesome/scss/font-awesome.scss";
+//@import "html/libs/jQuery.mmenu/dist/css/jquery.mmenu.all";
+//@import "html/libs/magnific-popup/dist/magnific-popup";
