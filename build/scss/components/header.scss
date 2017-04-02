@@ -109,8 +109,7 @@
         }
 
         span {
-            opacity: 0;
-            background-color: $main-color;
+            display: none;
         }
 
         &:before {
@@ -266,7 +265,7 @@
     flex: 0 1 auto;
     align-self: center;
     width: 50%;
-
+    margin: 0;
     img {
         display: block;
         max-width: 100%;

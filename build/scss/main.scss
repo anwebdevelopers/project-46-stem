@@ -151,16 +151,22 @@ a {
 @import "components/production.scss";
 @import "components/advantages.scss";
 @import "components/selection.scss";
+@import "components/scheme.scss";
+@import "components/vantages.scss";
+@import "components/questions.scss";
+@import "components/contacts.scss";
+@import "components/production-slider.scss";
 
-//@import "build/scss/components/magnific-popup.scss";
+
 
 //ALWAYS END
 //@import "components/media.scss";
 
 //Load Libs SASS
 //@import "html/libs/animate/animate.sass";
-//@import "html/libs/owl.carousel/dist/assets/owl.carousel.min";
+@import "html/libs/owl.carousel/dist/assets/owl.carousel.min";
 //@import "html/libs/superfish/dist/css/superfish";
 //@import "html/libs/font-awesome/scss/font-awesome.scss";
 //@import "html/libs/jQuery.mmenu/dist/css/jquery.mmenu.all";
-//@import "html/libs/magnific-popup/dist/magnific-popup";
+@import "build/scss/components/magnific-popup.scss";
+@import "html/libs/magnific-popup/dist/magnific-popup";

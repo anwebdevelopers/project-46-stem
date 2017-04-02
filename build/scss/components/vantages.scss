@@ -1,0 +1,83 @@
+.vantages {
+    padding: 8rem 0;
+    background-color: #000;
+    background: linear-gradient(135deg, $main-color 20%, rgba(255, 255, 255, 0) 20%) left top / 50% 100% no-repeat, linear-gradient(135deg, rgba(255, 255, 255, 0) 48%, #fff 48%) center center / auto no-repeat, url(../img/bg-vantages.jpg) left center / cover no-repeat;
+}
+.vantages__container {
+
+}
+.vantages__title {
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+}
+.vantages__box {
+    margin: 6rem 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.vantages__item {
+    flex: 0 1 auto;
+    width: 45%;
+    margin: 0 5% 3rem 0;
+    &:nth-child(even) {
+        .vantages__item-number {
+            color: $accent-color;
+        }
+        .vantages__item-text {
+            color: #000;
+            text-shadow: 1px 1px 1px #fff;
+        }
+    }
+}
+.vantages__item-number {
+    background: none;
+    font-size: 5.5rem;
+    line-height: 1;
+    font-weight: 800;
+    color: $main-color;
+}
+.vantages__item-text {
+    font-size: 2.4rem;
+    line-height: 1;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+}
+
+@media only screen and (max-width : 1400px) {
+
+}
+
+@media only screen and (max-width : 1280px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 360px) {
+    .vantages__box {
+        // display: block;
+        flex-direction: column;
+    }
+    .vantages__item {
+        width: auto;
+        margin: 3rem 0 0 0;
+        &:nth-child(even) {
+            order: 1;
+        }
+    }
+}

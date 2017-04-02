@@ -65,14 +65,14 @@ gulp.task('scripts', function() {
 		//'./html/libs/waypoints/waypoints.min.js',
 		//'./html/libs/animate/animate-css.js',
 		'./html/libs/plugins-scroll/plugins-scroll.js',
-		//'./html/libs/owl.carousel/dist/owl.carousel.min.js',
+		'./html/libs/owl.carousel/dist/owl.carousel.min.js',
 		//'./html/libs/page-scroll-to-id/jquery.malihu.PageScroll2id.min.js',
 		//'./html/libs/velocity/velocity.min.js',
 		//'./html/libs/velocity/velocity.ui.min.js',
 		// './html/libs/superfish/dist/js/superfish.min.js',
 		// './html/libs/jQuery.mmenu/dist/js/jquery.mmenu.all.min.js',
 		// './html/libs/jquery-equalheight/jquery.equalheight.min.js',
-		// './html/libs/magnific-popup/dist/jquery.magnific-popup.min.js'
+		'./html/libs/magnific-popup/dist/jquery.magnific-popup.min.js'
 		])
 	.pipe(concat('libs.js'))
 	//.pipe(uglify()) //Minify libs.js

@@ -64,7 +64,6 @@
     	border-radius: 3rem;
     	text-align: center;
     	transition: all .5s ease;
-
         &:hover, &:active {
             color: #fff;
             background-color: $main-color;
@@ -182,6 +181,7 @@
 .production__tabs-img {
     flex: 0 1 auto;
     width: 44%;
+    margin: 0;
     position: relative;
     img {
         position: relative;
