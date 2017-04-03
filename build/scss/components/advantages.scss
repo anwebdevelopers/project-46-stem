@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    background-attachment: fixed;
 }
 .advantages__container {
 
@@ -43,15 +44,15 @@
         font-weight: 800;
         color: #fff;
     }
-    &:nth-child(1){&:before{content:'1.'}}
-    &:nth-child(2){&:before{content:'2.'}}
-    &:nth-child(3){&:before{content:'3.'}}
-    &:nth-child(4){&:before{content:'4.'}}
-    &:nth-child(5){&:before{content:'5.'}}
-    &:nth-child(6){&:before{content:'6.'}}
-    &:nth-child(7){&:before{content:'7.'}}
-    &:nth-child(8){&:before{content:'8.'}}
-    &:nth-child(9){&:before{content:'9.'}}
+    &:nth-child(1){&:before{content:'1.'}animation-delay: .25s}
+    &:nth-child(2){&:before{content:'2.'}animation-delay: .5s}
+    &:nth-child(3){&:before{content:'3.'}animation-delay: .75s}
+    &:nth-child(4){&:before{content:'4.'}animation-delay: .25s}
+    &:nth-child(5){&:before{content:'5.'}animation-delay: .5s}
+    &:nth-child(6){&:before{content:'6.'}animation-delay: .75s}
+    &:nth-child(7){&:before{content:'7.'}animation-delay: .25s}
+    &:nth-child(8){&:before{content:'8.'}animation-delay: .5s}
+    &:nth-child(9){&:before{content:'9.'}animation-delay: .75s}
 }
 .advantages__item-title {
     font-size: 2.4rem;
@@ -120,6 +121,9 @@
 }
 
 @media only screen and (max-width : 480px) {
+    .advantages {
+        background-attachment: scroll;
+    }
     .advantages__item-list {
         display: block;
         li {

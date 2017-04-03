@@ -1,7 +1,7 @@
 .production {
     position: relative;
     padding: 0 0 7rem 0;
-    background-color: #f4f5f6;
+    margin-top: -1px;
     overflow: hidden;
     &:before {
         content: '';
@@ -11,27 +11,23 @@
         top: 0;
         right: 50%;
         bottom: 0;
-        //margin-right: 10rem;
         background-color: $main-color;
         transform: skewX(-45deg);
-        //transform: rotate(45deg);
         transform-origin: right top;
     }
-    // &:after {
-    //     content: '';
-    //     position: absolute;
-    //     z-index: 0;
-    //     right: -500%;
-    //     top: 0;
-    //     left: 50%;
-    //     bottom: 0;
-    //     //height: 120%;
-    //     margin-left: -50rem;
-    //     background-color: #f4f5f6;
-    //     transform: skewX(45deg);
-    //     //transform: rotate(-45deg);
-    //     //transform-origin: left top;
-    // }
+    &:after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        right: -500%;
+        top: 0;
+        left: 50%;
+        bottom: 0;
+        margin-left: -80rem;
+        background-color: #f4f5f6;
+        transform: skewX(45deg);
+        transform-origin: left top;
+    }
 }
 .production__container {
     position: relative;

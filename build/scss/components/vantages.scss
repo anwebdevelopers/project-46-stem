@@ -1,10 +1,40 @@
 .vantages {
+    position: relative;
     padding: 8rem 0;
     background-color: #000;
-    background: linear-gradient(135deg, $main-color 20%, rgba(255, 255, 255, 0) 20%) left top / 50% 100% no-repeat, linear-gradient(135deg, rgba(255, 255, 255, 0) 48%, #fff 48%) center center / auto no-repeat, url(../img/bg-vantages.jpg) left center / cover no-repeat;
+    background-image: url(../img/bg-vantages.jpg);
+    background-position: left center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: -500%;
+        top: 0;
+        right: 80%;
+        bottom: 0;
+        background-color: $main-color;
+        transform: skewX(-45deg);
+        transform-origin: right top;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        right: -500%;
+        top: 0;
+        left: 50%;
+        bottom: 0;
+        background-color: #f4f5f6;
+        transform: skewX(-45deg);
+        transform-origin: left center;
+    }
 }
 .vantages__container {
-
+    position: relative;
+    z-index: 1;
 }
 .vantages__title {
     color: #fff;

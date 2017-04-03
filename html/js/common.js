@@ -73,34 +73,113 @@ $(function() {
 
 
     //------------------------------------
-    //Адаптивный слайдер
-    //------------------------------------
-    $('.owl-carousel').owlCarousel({
-        items: 1,
-        nav: true,
-        navText: '',
-        smartSpeed: 600,
-        mouseDrag: false
-    });
-
-    //------------------------------------
     //Галереея в каталоге
     //------------------------------------
-    var catalogImgLenght
-    $('.catalog__gallery').each(function() {
-        var catalogImgLenght = $(this).find('.catalog__img').length;
-        $(this).append('<div class="catalog__gallery-dots"></div>');
-        for (var i = 0; i < catalogImgLenght; i++ ) {
-            $(this).find('.catalog__gallery-dots').append($('<div class="catalog__gallery-dot"></div>'));
+
+    var $catalog = $('.catalog'),
+        $catalogItem = $('.catalog__item'),
+        $catalogImg = $('.catalog__img'),
+        $catalogGallery = $('.catalog__gallery');
+
+    $catalog.append('<div class="catalog__nav"><button class="prev"></button><button class="next"></button></div>');
+
+
+    $('.catalog__nav').on('click', 'button', function() {
+        var $this = $(this),
+            $slider = $this.closest($catalog),
+            $item = $slider.find($catalogItem),
+            itemActive = $slider.find('.catalog__item.active').index(),
+            itemLength = $item.length,
+            w = $(window).width();
+
+        if ($this.hasClass('prev')) {
+            $this.siblings('.next').removeClass('disabled');
+            if(itemActive !== 0) {
+                $item.slideUp(300).eq(itemActive - 1).addClass('active').slideDown(300).siblings().removeClass('active');
+                itemActive--;
+            }
+            if(itemActive === 0) {
+                $this.addClass('disabled');
+            }
+        } else {
+            $this.siblings('.prev').removeClass('disabled');
+            if(itemActive < itemLength - 1) {
+                $item.slideUp(300).eq(itemActive + 1).addClass('active').slideDown(300).siblings().removeClass('active');
+                itemActive++;
+            }
+            if(itemActive === itemLength - 1) {
+                $this.addClass('disabled');
+            }
         }
-        $(this).find('.catalog__img').not(':first').hide();
+        if (w <= 480) {
+            var thisSlide = $('.mfp-container').offset().top;
+            $('html, body').animate({scrollTop: thisSlide}, 300, 'linear');
+        }
+    });
+
+    $catalogImg.each(function() {
+        var $this = $(this);
+        $this.css({
+            'background-image' : 'url(' +  $this.data('path') +')',
+        });
+    });
+
+    $catalogGallery.each(function() {
+        var $this = $(this),
+            catalogImgLenght = $this.find($catalogImg).length;
+        $this.append('<div class="catalog__dots"></div>');
+        for (var i = 0; i < catalogImgLenght; i++ ) {
+            $this.find('.catalog__dots').append($('<div class="catalog__dot"></div>'));
+        }
+        $this.find($catalogImg).not(':first').hide();
     });
 
 
-    $('.catalog__gallery-dots').on('click', '.catalog__gallery-dot:not(.active)', function() {
-        $(this).addClass('active').siblings().removeClass('active');
-        $(this).closest('.catalog__gallery').find('.catalog__img').fadeOut(300).eq($(this).index()).fadeIn(300);
+    $('.catalog__dots').on('click', '.catalog__dot:not(.active)', function() {
+        var $this = $(this);
+        $this.addClass('active').siblings().removeClass('active');
+        $this.closest($catalogGallery).find($catalogImg).fadeOut(300).eq($this.index()).fadeIn(300);
     });
+
+    $catalog.each(function() {
+        var $this = $(this);
+        $this.find($catalogItem).not(':first').hide();
+        $this.find('.catalog__item:first').addClass('active');
+        $('.prev').addClass('disabled');
+        $this.find($catalogItem).find('.catalog__dot:first').addClass('active');
+    });
+
+
+    //------------------------------------------------
+    // Плавный скролл
+    //------------------------------------------------
+
+    $("a[href*='#']").click(function(e) {
+        e.preventDefault();
+        var thisSect = $($(this).attr('href')).offset().top;
+        $('html, body').animate({scrollTop: thisSect }, ((Math.abs(thisSect - $(window).scrollTop()) * 0.1) * 5), 'swing');
+    });
+
+    //------------------------------------------------
+    // Анимация появления элементов
+    //------------------------------------------------
+    var $about = $('.about'),
+        $aboutItem = $('.about__item');
+
+    $aboutItem.removeClass('animated');
+    $about.waypoint(function(direction) {
+        $aboutItem.each(function() {
+            $(this).addClass('animated');
+        });
+    }, {
+        offset: '50%'
+    });
+
+    $('.title, .undertitle, .about__text, .about__network-pretitle, .about__network-title, .advantages__text, .advantages__item, .selection__item, .contacts__box').animated("fadeInUp");
+    $('.production__tabs-buttons, .vantages__item:nth-child(odd)').animated("fadeInLeft");
+    $('.production__tabs-box, .vantages__item:nth-child(even)').animated("fadeInRight");
+    $('.about__network-img').animated("zoomIn");
+    $('.scheme__item').animated("fadeIn");
 
     //---------------------------------------------------
     //Яндекс карта

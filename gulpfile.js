@@ -62,10 +62,10 @@ gulp.task('scripts', function() {
 	return gulp.src([
 		//'./html/libs/modernizr/modernizr.js',
 		'./html/libs/jquery/jquery-3.1.1.min.js',
-		//'./html/libs/waypoints/waypoints.min.js',
-		//'./html/libs/animate/animate-css.js',
+		'./html/libs/waypoints/waypoints.min.js',
+		'./html/libs/animate/animate-css.js',
 		'./html/libs/plugins-scroll/plugins-scroll.js',
-		'./html/libs/owl.carousel/dist/owl.carousel.min.js',
+		// './html/libs/owl.carousel/dist/owl.carousel.min.js',
 		//'./html/libs/page-scroll-to-id/jquery.malihu.PageScroll2id.min.js',
 		//'./html/libs/velocity/velocity.min.js',
 		//'./html/libs/velocity/velocity.ui.min.js',
