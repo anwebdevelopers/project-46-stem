@@ -22,11 +22,11 @@ $(function() {
         } else {
             $this.removeClass('active');
             $headerMenu.css({
-                '-webkit-transform': 'translateY(-100%)',
-                '-moz-transform': 'translateY(-100%)',
-                '-ms-transform': 'translateY(-100%)',
-                '-o-transform': 'translateY(-100%)',
-                'transform': 'translateY(-100%)',
+                '-webkit-transform': 'translateY(-120%)',
+                '-moz-transform': 'translateY(-120%)',
+                '-ms-transform': 'translateY(-120%)',
+                '-o-transform': 'translateY(-120%)',
+                'transform': 'translateY(-120%)',
             });
         }
     });
@@ -154,10 +154,29 @@ $(function() {
     // Плавный скролл
     //------------------------------------------------
 
-    $("a[href*='#']").click(function(e) {
+    $(".scroll").click(function(e) {
         e.preventDefault();
         var thisSect = $($(this).attr('href')).offset().top;
         $('html, body').animate({scrollTop: thisSect }, ((Math.abs(thisSect - $(window).scrollTop()) * 0.1) * 5), 'swing');
+    });
+
+    //---------------------------------------------
+    //Аккордеон technologi
+    //---------------------------------------------
+    var $questionsItem = $('.questions__item'),
+        $questionsPoint = $('.questions__point'),
+        $questionsWrapper = $('.questions__wrapper');
+
+    $questionsPoint.addClass('hide');
+    $questionsWrapper.hide();
+
+    $questionsPoint.on('click', function() {
+        var $this = $(this);
+        if($this.hasClass('hide')) {
+            $this.removeClass('hide').closest($questionsItem).find($questionsWrapper).slideDown(300);
+        } else {
+            $this.addClass('hide').closest($questionsItem).find($questionsWrapper).slideUp(300);
+        }
     });
 
     //------------------------------------------------
