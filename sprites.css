@@ -1,4 +1,4 @@
-.icon-rocket, .icon-advantages1, .icon-advantages2, .icon-advantages3, .icon-advantages4, .icon-dealer1, .icon-dealer2, .icon-dealer3, .icon-dealer4, .icon-dealer5{
+.icon-rocket, .icon-advantages1, .icon-advantages2, .icon-advantages3, .icon-advantages4, .icon-dealer1, .icon-dealer2, .icon-dealer3, .icon-scheme4, .icon-scheme5{
 	background: url(sprites.png) no-repeat;
 }
 
@@ -50,14 +50,14 @@
 	height: 57px;
 }
 
-.icon-dealer4{
-	background-position: 0 -495px ;
+.icon-scheme4{
+	background-position: 0 -496px ;
 	width: 59px;
 	height: 55px;
 }
 
-.icon-dealer5{
-	background-position: 0 -559px ;
+.icon-scheme5{
+	background-position: 0 -558px ;
 	width: 67px;
 	height: 56px;
 }

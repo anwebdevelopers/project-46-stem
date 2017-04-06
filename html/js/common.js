@@ -182,23 +182,30 @@ $(function() {
     //------------------------------------------------
     // Анимация появления элементов
     //------------------------------------------------
-    var $about = $('.about'),
-        $aboutItem = $('.about__item');
+    (function() {
+        var w = $(window).width();
+        if (w > 768) {
+            var $about = $('.about'),
+                $aboutItem = $('.about__item');
 
-    $aboutItem.removeClass('animated');
-    $about.waypoint(function(direction) {
-        $aboutItem.each(function() {
-            $(this).addClass('animated');
-        });
-    }, {
-        offset: '50%'
-    });
+            $aboutItem.removeClass('animated');
+            $about.waypoint(function(direction) {
+                $aboutItem.each(function() {
+                    $(this).addClass('animated');
+                });
+            }, {
+                offset: '50%'
+            });
 
-    $('.title, .undertitle, .about__text, .about__network-pretitle, .about__network-title, .advantages__text, .advantages__item, .selection__item, .contacts__box').animated("fadeInUp");
-    $('.production__tabs-buttons, .vantages__item:nth-child(odd)').animated("fadeInLeft");
-    $('.production__tabs-box, .vantages__item:nth-child(even)').animated("fadeInRight");
-    $('.about__network-img').animated("zoomIn");
-    $('.scheme__item').animated("fadeIn");
+            $('.title, .undertitle, .about__text, .about__network-pretitle, .about__network-title, .advantages__text, .advantages__item, .selection__item, .contacts__box').animated("fadeInUp");
+            $('.production__tabs-buttons, .vantages__item:nth-child(odd)').animated("fadeInLeft");
+            $('.production__tabs-box, .vantages__item:nth-child(even)').animated("fadeInRight");
+            $('.about__network-img').animated("zoomIn");
+            $('.scheme__item').animated("fadeIn");
+        }
+    })();
+
+
 
     //---------------------------------------------------
     //Яндекс карта
