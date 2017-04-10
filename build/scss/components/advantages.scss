@@ -27,6 +27,7 @@
     margin: 4rem 0 0 0;
     display: flex;
     flex-wrap: wrap;
+    counter-reset: myCounter;
 }
 .advantages__item {
     position: relative;
@@ -35,6 +36,8 @@
     padding: 7rem 2% 0 0;
     margin: 0 0 4rem 0;
     &:before {
+        counter-increment: myCounter;
+        content: counter(myCounter) ".";
         position: absolute;
         top: 0;
         left: 0;
@@ -43,15 +46,6 @@
         font-weight: 800;
         color: #fff;
     }
-    &:nth-child(1){&:before{content:'1.'}animation-delay: .25s}
-    &:nth-child(2){&:before{content:'2.'}animation-delay: .5s}
-    &:nth-child(3){&:before{content:'3.'}animation-delay: .75s}
-    &:nth-child(4){&:before{content:'4.'}animation-delay: .25s}
-    &:nth-child(5){&:before{content:'5.'}animation-delay: .5s}
-    &:nth-child(6){&:before{content:'6.'}animation-delay: .75s}
-    &:nth-child(7){&:before{content:'7.'}animation-delay: .25s}
-    &:nth-child(8){&:before{content:'8.'}animation-delay: .5s}
-    &:nth-child(9){&:before{content:'9.'}animation-delay: .75s}
 }
 .advantages__item-title {
     font-size: 2.4rem;
